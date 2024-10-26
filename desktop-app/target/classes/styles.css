@@ -1,0 +1,20 @@
+
+.table-view {
+    -fx-background-color: #333;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #444;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #fff;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #555;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #666;
+}
