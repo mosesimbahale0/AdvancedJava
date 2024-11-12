@@ -64,7 +64,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Book Store Dashbard"/>
+        <Property name="text" type="java.lang.String" value="TechBook Dashbard"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -97,12 +97,12 @@
                 <Column editable="true" title="Title" type="java.lang.Object"/>
                 <Column editable="true" title="Author" type="java.lang.Object"/>
                 <Column editable="true" title="Description" type="java.lang.Object"/>
-                <Column editable="true" title="Date" type="java.lang.Object"/>
                 <Column editable="true" title="Image" type="java.lang.Object"/>
                 <Column editable="true" title="Rating" type="java.lang.Object"/>
                 <Column editable="true" title="Stock" type="java.lang.Object"/>
                 <Column editable="true" title="Price" type="java.lang.Object"/>
                 <Column editable="true" title="Actions" type="java.lang.Object"/>
+                <Column editable="true" title="Edit" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

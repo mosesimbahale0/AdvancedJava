@@ -18,7 +18,7 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
-   width: 98%;
+    width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
@@ -117,17 +117,17 @@ ul li {
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
 ul li img {
     max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+    height: 300px;
+    /*    border-radius: 4px;*/
     margin-bottom: 15px;
 }
 
@@ -183,4 +183,90 @@ footer {
     nav a {
         margin: 10px 0;
     }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+    background: #2d2f34;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+nav {
+    background: #1f2124;
+    padding: 1rem;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+nav ul li {
+    margin: 0 1rem;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    color: #1e90ff;
+}
+main {
+    padding: 2rem;
+    flex: 1;
+    text-align: center;
+}
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+main p {
+    font-size: 1.2rem;
+    color: #666;
+}
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+.feature-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 280px;
+    text-align: left;
+}
+.feature-card h3 {
+    color: #2d2f34;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.feature-card p {
+    color: #555;
+    font-size: 1rem;
+}
+footer {
+    background: #2d2f34;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
 }

@@ -10,4 +10,12 @@
         <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.kca.example2.Example2</exec.mainClass>
     </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>9.1.0</version>
+        </dependency>
+    </dependencies>
 </project>

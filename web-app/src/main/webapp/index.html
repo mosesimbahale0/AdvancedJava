@@ -5,22 +5,148 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TechBook</title>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/web-app/css/style.css">
 
+        <style>
+            /* Basic reset and font styling */
+            body {
+                font-family: 'Ubuntu', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                color: #333;
+            }
 
+            /* Header styling */
+            header {
+                background-color: #fff;
+                color: #333;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #ddd;
+            }
+
+            header h1 {
+                font-size: 2rem;
+                margin: 0;
+            }
+
+            header nav {
+                display: flex;
+                gap: 1rem;
+            }
+
+            header nav a {
+                color: #333;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            header nav a:hover {
+                color: #ff9800;
+            }
+
+            /* Main section */
+            main {
+                padding: 2rem;
+                text-align: center;
+                min-height: 100vh;
+            }
+
+            main h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            main p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin-bottom: 2rem;
+            }
+
+            /* Feature cards */
+            .features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                background-color: #fff;
+                border-radius: 8px;
+                padding: 1.5rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .feature-card p {
+                font-size: 1rem;
+                color: #555;
+            }
+
+            /* Footer styling */
+            footer {
+                background-color: #fff;
+                color: #333;
+                text-align: center;
+                padding: 1rem;
+                border-top: 1px solid #ddd;
+                margin-top: 2rem;
+            }
+
+            footer p {
+                margin: 0;
+            }
+        </style>
     </head>
     <body>
         <header>
             <h1>TechBook</h1>
+
+            <nav>
+                <a href="/web-app/register">Store</a>
+                <a href="/web-app/view-books">About</a>
+            </nav>
+
             <nav>
                 <a href="/web-app/register">Register</a>
-                <a href="/web-app/view-books">Books</a>
+                <a href="/web-app/view-books">Login</a>
             </nav>
         </header>
 
         <main>
             <h2>Welcome to TechBook</h2>
-            <p>Your ultimate destination for discovering and exploring a wide range of tech books.</p>
+            <p>Your go-to platform to discover the latest, greatest, and most comprehensive tech books in the industry.</p>
+
+            <section class="features">
+                <div class="feature-card">
+                    <h3>Wide Selection</h3>
+                    <p>Find books on AI, programming, data science, cybersecurity, and more from top publishers and authors.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Top Reviews</h3>
+                    <p>Read in-depth reviews and recommendations from tech experts and industry leaders.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Community Favorites</h3>
+                    <p>Browse through top picks and user-curated lists to find books loved by the community.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Personalized Recommendations</h3>
+                    <p>Get suggestions based on your interests and reading history for an optimal discovery experience.</p>
+                </div>
+            </section>
         </main>
 
         <footer>

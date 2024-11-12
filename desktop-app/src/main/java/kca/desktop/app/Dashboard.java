@@ -38,7 +38,7 @@ public class Dashboard extends javax.swing.JFrame {
                 int col = jTable1.columnAtPoint(evt.getPoint());
 
                 // Ensure a valid row is clicked
-                if (row != -1 && col == 9) {  // Assuming "Actions" column is the 10th column
+                if (row != -1 && col == 8) {  // Assuming "Actions" column is the 10th column
                     int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this book?", "Delete Book", JOptionPane.YES_NO_OPTION);
                     if (confirm == JOptionPane.YES_OPTION) {
                         Integer bookId = (Integer) jTable1.getValueAt(row, 0);  // Assuming ID is in the first column
@@ -57,6 +57,22 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+// Add mouse listener for edit action
+        jTable1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                int row = jTable1.rowAtPoint(evt.getPoint());
+                int col = jTable1.columnAtPoint(evt.getPoint());
+
+                if (row != -1 && col == 10) { // Assuming column 11 is for edit
+                    Integer bookId = (Integer) jTable1.getValueAt(row, 0); // Get book ID
+                    EditBookForm editForm = new EditBookForm(bookId);
+                    editForm.setVisible(true);
+                    editForm.setLocationRelativeTo(null); // Center the form on the screen
+                }
+            }
+        });
+
     }
 
     /**
@@ -65,15 +81,21 @@ public class Dashboard extends javax.swing.JFrame {
     private void fetchAndDisplayBooks() {
         List<Book> books = BookFetcher.fetchBooks(); // Fetch books from the API
         if (books != null) {
-            // Use your custom BookTableModel
+            // Use the custom BookTableModel
             bookTableModel = new BookTableModel(books);
             jTable1.setModel(bookTableModel); // Set the custom table model
 
-            // Set the ButtonRenderer and ButtonEditor for the "Actions" (Delete) column
-            jTable1.getColumnModel().getColumn(9).setCellRenderer(new ButtonRenderer());
-            jTable1.getColumnModel().getColumn(9).setCellEditor(new ButtonEditor(jTable1, books, bookTableModel));
+            if (jTable1.getColumnModel().getColumnCount() > 8) {
+                jTable1.getColumnModel().getColumn(8).setCellRenderer(new ButtonRenderer());
+                jTable1.getColumnModel().getColumn(8).setCellEditor(new ButtonEditor(jTable1, books, bookTableModel));
+            }
 
-            // Revalidate and repaint the table to ensure last row visibility
+            if (jTable1.getColumnModel().getColumnCount() > 9) {
+                jTable1.getColumnModel().getColumn(9).setCellRenderer(new EditButtonRenderer());
+                jTable1.getColumnModel().getColumn(9).setCellEditor(new EditButtonEditor(jTable1, books, bookTableModel, true));
+            }
+
+            // Refresh the table view
             jTable1.revalidate();
             jTable1.repaint();
 
@@ -103,7 +125,7 @@ public class Dashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
-        jLabel1.setText("Book Store Dashbard");
+        jLabel1.setText("TechBook Dashbard");
 
         jLabel2.setText("Wlcome Admin!");
 
@@ -124,7 +146,7 @@ public class Dashboard extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Title", "Author", "Description", "Date", "Image", "Rating", "Stock", "Price", "Actions"
+                "ID", "Title", "Author", "Description", "Image", "Rating", "Stock", "Price", "Actions", "Edit"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -171,7 +193,7 @@ public class Dashboard extends javax.swing.JFrame {
         BookForm bookForm = new BookForm();  // Create an instance of BookForm
         bookForm.setVisible(true);           // Make the form visible
         bookForm.setLocationRelativeTo(null); // Optional: Center the form on the screen
-        
+
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

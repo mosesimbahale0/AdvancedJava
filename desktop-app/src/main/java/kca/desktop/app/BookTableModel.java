@@ -7,7 +7,7 @@ public class BookTableModel extends AbstractTableModel {
 
     private final List<Book> books;
     private final String[] columnNames = {
-        "ID", "Title", "Author", "Description", "Price", "Create Time", "Image", "Rating", "Stock", "Delete"
+        "ID", "Title", "Author", "Description", "Price", "Image", "Rating", "Stock", "Delete", "Edit"
     };
 
     public BookTableModel(List<Book> books) {
@@ -39,15 +39,15 @@ public class BookTableModel extends AbstractTableModel {
             case 4:
                 return book.getPrice();
             case 5:
-                return book.getCreateTime();
-            case 6:
                 return book.getImg();
-            case 7:
+            case 6:
                 return book.getRating();
-            case 8:
+            case 7:
                 return book.getStock();  // Stock column (no "Delete" button here)
-            case 9:
+            case 8:
                 return "Delete";  // Text for the delete button in the "Delete" column
+            case 9:
+                return "Edit";  // Text for the edit button in the "Edit" column
             default:
                 return null;
         }
@@ -60,8 +60,8 @@ public class BookTableModel extends AbstractTableModel {
 
     @Override
     public boolean isCellEditable(int row, int column) {
-        // Only the "Delete" column (index 9) should be editable
-        return column == 9;
+        // Only the "Delete" (index 8) and "Edit" (index 9) columns should be editable
+        return column == 8 || column == 9;
     }
 
     /**

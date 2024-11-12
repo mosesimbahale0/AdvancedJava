@@ -1,16 +1,3 @@
-///*
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-// */
-//package kca.desktop.app;
-//
-///**
-// *
-// * @author personal
-// */
-//public class BookAdder {
-//    
-//}
 package kca.desktop.app;
 
 import com.google.gson.Gson;
